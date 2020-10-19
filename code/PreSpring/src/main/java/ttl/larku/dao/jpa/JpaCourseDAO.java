@@ -5,9 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.domain.Course;
 
+@Component
 public class JpaCourseDAO implements BaseDAO<Course> {
 
     private Map<Integer, Course> courses = new HashMap<Integer, Course>();

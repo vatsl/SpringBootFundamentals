@@ -13,21 +13,29 @@ public class RegistrationApp {
 
     public static void main(String[] args) {
         //primeAndPrintBoth();
+        RegistrationApp ra = new RegistrationApp();
+        ra.go();
+    }
+
+    private StudentService ss = new StudentService();
+
+    public void go() {
         postRequestToAddAStudent();
         getRequestForAllStudents();
     }
 
 
-    public static void postRequestToAddAStudent() {
-        StudentService ss = new StudentService();
+
+    public void postRequestToAddAStudent() {
+//        StudentService ss = new StudentService();
         ss.createStudent("New One", "282 484 9944", Student.Status.FULL_TIME);
 
         List<Student> students = ss.getAllStudents();
         students.forEach(System.out::println);
     }
 
-    public static void getRequestForAllStudents() {
-        StudentService ss = new StudentService();
+    public void getRequestForAllStudents() {
+//        StudentService ss = new StudentService();
         List<Student> students = ss.getAllStudents();
         System.out.println("All Students: " + students.size());
         students.forEach(System.out::println);

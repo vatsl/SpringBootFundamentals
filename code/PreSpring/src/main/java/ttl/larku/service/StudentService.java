@@ -16,7 +16,11 @@ public class StudentService {
     private BaseDAO<Student> studentDAO;
 
     public StudentService() {
-        studentDAO = new InMemoryStudentDAO();
+        int i = 0;
+    }
+
+    public List<Student> getAllStudents() {
+        return studentDAO.getAll();
     }
 
     public Student createStudent(String name, String phoneNumber, Status status) {
@@ -45,10 +49,6 @@ public class StudentService {
 
     public Student getStudent(int id) {
         return studentDAO.get(id);
-    }
-
-    public List<Student> getAllStudents() {
-        return studentDAO.getAll();
     }
 
     public BaseDAO<Student> getStudentDAO() {

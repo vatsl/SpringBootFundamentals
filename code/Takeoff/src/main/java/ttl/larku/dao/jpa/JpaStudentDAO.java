@@ -1,5 +1,6 @@
 package ttl.larku.dao.jpa;
 
+import ttl.larku.dao.inmemory.BaseDAO;
 import ttl.larku.domain.Student;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class JpaStudentDAO {
+public class JpaStudentDAO implements BaseDAO {
 
     private Map<Integer, Student> students = new HashMap<Integer, Student>();
     private static AtomicInteger nextId = new AtomicInteger(0);
