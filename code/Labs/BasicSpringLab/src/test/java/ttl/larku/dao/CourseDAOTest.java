@@ -3,6 +3,7 @@ package ttl.larku.dao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.ContextConfiguration;
@@ -44,6 +45,7 @@ public class CourseDAOTest {
     //TODO - Dependency Injection Using Annotations.
     //Here you will need to supply the name for the Dependency
     //you need to inject
+    @Autowired
     private BaseDAO<Course> dao;
 
     @BeforeEach

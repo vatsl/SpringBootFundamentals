@@ -2,9 +2,14 @@ package ttl.larku.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import ttl.larku.domain.Course;
 import ttl.larku.domain.ScheduledClass;
 import ttl.larku.domain.Student;
+import ttl.larku.jconfig.LarkUConfig;
 
 import javax.annotation.Resource;
 
@@ -13,6 +18,8 @@ import static org.junit.Assert.assertEquals;
 //TODO - Add Annotations to run Test with SpringExtension, and
 // to create the application Context.  Look at Examples in other Tests if
 // you need to
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = {LarkUConfig.class})
 public class StudentServiceTest {
 
     private String name1 = "Bloke";
@@ -37,7 +44,7 @@ public class StudentServiceTest {
     private Student student2;
 
     //TODO - This might need fixing.
-    @Resource
+    @Resource(name = "studentService")
     private StudentService ss;
 
     @BeforeEach
