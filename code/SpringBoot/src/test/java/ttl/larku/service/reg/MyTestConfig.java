@@ -26,8 +26,8 @@ import ttl.larku.SpringBootApp;
 @TestConfiguration
 //@ComponentScan(basePackages = {"ttl.larku"}) //, excludeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".* SpringBootApp.*"))
 //@ComponentScan(basePackages = {"ttl.larku"}, excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = SpringBootApplication.class))
-@ComponentScan(basePackages = {"ttl.larku"}, excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SpringBootApp.class))
-@ComponentScan(basePackages = {"ttl.larku.service", "ttl.larku.dao"})
+//@ComponentScan(basePackages = {"ttl.larku"}, excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SpringBootApp.class))
+//@ComponentScan(basePackages = {"ttl.larku.service", "ttl.larku.dao"})
 @Import(LarkUConfig.class)
 //@EnableConfigurationProperties
 public class MyTestConfig{
