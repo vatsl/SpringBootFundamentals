@@ -34,4 +34,10 @@ public class ServiceThatWeDontOwn {
                 ", countDown=" + countDown +
                 '}';
     }
+
+    public void foo() {
+        ServiceThatWeDontOwn swt = new ServiceThatWeDontOwn();
+        swt.setCountDown(true);
+        swt.setTimeout(Duration.ofMillis(20));
+    }
 }
