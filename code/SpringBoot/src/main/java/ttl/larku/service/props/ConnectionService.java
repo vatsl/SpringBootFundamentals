@@ -10,8 +10,11 @@ import java.net.Socket;
 @Service
 public class ConnectionService {
 
-    @Autowired
-    private ConnectionServiceProperties props;
+    private final ConnectionServiceProperties props;
+
+    public ConnectionService(ConnectionServiceProperties props) {
+        this.props = props;
+    }
 
     public int makeConnection() {
         int retries = props.getRetriesOnTimeout();

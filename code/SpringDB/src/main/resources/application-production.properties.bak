@@ -34,4 +34,5 @@ mysqldb.datasource.driver-class-name=org.mariadb.jdbc.Driver
 mysqldb.datasource.platform=org.hibernate.dialect.MariaDB103Dialect
 mysqldb.datasource.configuration.maximum-pool-size=10
 
+
 #*******************************End Data Sources*******************************

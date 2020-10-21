@@ -1,8 +1,14 @@
 package ttl.larku.controllers.rest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 import ttl.larku.domain.Student;
 import ttl.larku.service.StudentService;
 
@@ -13,12 +19,15 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 @RestController
 @RequestMapping("/adminrest/student")
 public class StudentRestController {
 
     @Resource
     private StudentService studentService;
+
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getStudent(@PathVariable("id") int id) {
@@ -100,13 +109,15 @@ public class StudentRestController {
         studentService.updateStudent(student);
         return ResponseEntity.noContent().build();
     }
-}
 
-
-//    @PostMapping
+//    @Autowired
+//    @Qualifier("mvcValidator")
+//    private Validator validator;
+//
+//    @PostMapping("/valid")
 //    public ResponseEntity<?> createStudent(@RequestBody Student s,
 //                                           UriComponentsBuilder ucb, Errors errors) {
-////        validator.validate(s, errors);
+//        validator.validate(s, errors);
 //        if (errors.hasErrors()) {
 //            List<String> errmsgs = errors.getFieldErrors().stream()
 //                    .map(error -> "error:" + error.getField() + ": " + error.getDefaultMessage()
@@ -121,3 +132,4 @@ public class StudentRestController {
 //
 //        return ResponseEntity.created(uriComponents.toUri()).body(new RestResult(s));
 //    }
+}

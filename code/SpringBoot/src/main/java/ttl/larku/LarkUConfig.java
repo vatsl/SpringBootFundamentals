@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.dao.inmemory.InMemoryClassDAO;
 import ttl.larku.dao.inmemory.InMemoryCourseDAO;
@@ -146,4 +147,14 @@ public class LarkUConfig {
     public ServiceThatWeDontOwn serviceThatWeDontOwn() {
         return new ServiceThatWeDontOwn();
     }
+
+    /**
+     * Validator
+     <bean id="validator"
+     class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+     */
+//    @Bean
+//    public LocalValidatorFactoryBean validator() {
+//        return new LocalValidatorFactoryBean();
+//    }
 }

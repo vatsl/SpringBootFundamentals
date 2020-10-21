@@ -40,13 +40,13 @@ public class SpringBootApp {
         app.addInitializers(new MyInitializer());
         ConfigurableApplicationContext context = app.run(args);
 
-        ConnectionService cs = context.getBean("connectionService", ConnectionService.class);
-        int result = cs.makeConnection();
-
-        System.out.println("Result is " + result);
-
-        ServiceThatWeDontOwn stwdo = context.getBean("serviceThatWeDontOwn", ServiceThatWeDontOwn.class);
-        System.out.println("stwdo: " + stwdo);
+//        ConnectionService cs = context.getBean("connectionService", ConnectionService.class);
+//        int result = cs.makeConnection();
+//
+//        System.out.println("Result is " + result);
+//
+//        ServiceThatWeDontOwn stwdo = context.getBean("serviceThatWeDontOwn", ServiceThatWeDontOwn.class);
+//        System.out.println("stwdo: " + stwdo);
 
 //        context.close();
     }

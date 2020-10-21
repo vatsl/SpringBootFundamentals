@@ -1,7 +1,9 @@
 package ttl.larku.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.lang.NonNull;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,8 @@ public class Student {
 
     private int id;
     private String name;
+
+    @NotNull
     private String phoneNumber;
 
     private Status status = Status.FULL_TIME;
