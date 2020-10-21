@@ -3,6 +3,7 @@ package ttl.larku.dao.repository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;
@@ -23,7 +24,7 @@ public interface StudentRepo extends JpaRepository<Student, Integer> {
 //    @Query("select s from Student s left join fetch s.classes sc left join fetch sc.course")
 //    public List<Student> findAll();
 
-//    @Query("select s from Student s where s.name = :name")
+    //@Query("select s from Student s where s.name = :name")
     public List<Student> findByName(@Param("name") String name);
 
     public List<Student> findByNameLike(@Param("name") String name);

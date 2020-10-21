@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Component;
 import ttl.larku.domain.Student;
 import ttl.larku.service.StudentService;
@@ -12,6 +13,7 @@ import java.util.List;
 
 //@SpringBootApplication(scanBasePackages = {"ttl.larku.jconfig", "ttl.larku.sbdemo"})
 @SpringBootApplication //(scanBasePackages = {"ttl.larku"})
+@EnableJpaRepositories
 public class SbdemoApplication {
 
     public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class SbdemoApplication {
 
 }
 
-@Component
+//@Component
 class MyRunner implements CommandLineRunner
 {
 

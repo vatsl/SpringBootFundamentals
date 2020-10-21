@@ -59,7 +59,6 @@ public class StudentRestController {
     @PostMapping
     public ResponseEntity<?> createStudent(@RequestBody Student s) {
         s = studentService.createStudent(s);
-
         URI newResource = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")

@@ -1,5 +1,8 @@
 package ttl.larku.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Student {
 	
 	public enum Status { 
@@ -7,11 +10,15 @@ public class Student {
 		PART_TIME,
 		HIBERNATING
 	};
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
 	private String name;
 	private String phoneNumber;
-	
+
+	@Enumerated(EnumType.STRING)
 	private Status status = Status.FULL_TIME;
 	
 	public Student() {

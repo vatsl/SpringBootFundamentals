@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ttl.larku.domain.Student;
+import ttl.larku.service.StudentRepoService;
 import ttl.larku.service.StudentService;
 
 import java.net.URI;
@@ -16,8 +17,10 @@ import java.util.List;
 @RequestMapping("/sbdemo/student")
 public class StudentController {
 
+//    @Autowired
+//    private StudentService studentService;
     @Autowired
-    private StudentService studentService;
+    private StudentRepoService studentService;
 
     @GetMapping
     public List<Student> getStudents() {

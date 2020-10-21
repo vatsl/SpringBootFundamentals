@@ -34,7 +34,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
-@ExtendWith(SpringExtension.class)
+//@ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = StudentRestController.class)
 //@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 //@AutoConfigureMockMvc
@@ -117,7 +117,7 @@ public class StudentRestControllerSliceTest {
                         .accept(MediaType.APPLICATION_JSON));
 
         MvcResult result = actions
-                .andExpect(status().is4xxClientError())
+                .andExpect(status().isBadRequest())
                 .andReturn();
 
         MockHttpServletResponse response = result.getResponse();
@@ -134,8 +134,10 @@ public class StudentRestControllerSliceTest {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(student);
 
-        ResultActions actions = mockMvc.perform(post("/adminrest/student/").accept(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON).content(jsonString));
+        ResultActions actions = mockMvc.perform(post("/adminrest/student/")
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(jsonString));
 
         actions = actions.andExpect(content().contentType(MediaType.APPLICATION_JSON));
 

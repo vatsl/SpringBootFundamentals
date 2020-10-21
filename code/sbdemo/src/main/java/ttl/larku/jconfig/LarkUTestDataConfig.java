@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@Profile("development")
+//@Profile("development")
 public class LarkUTestDataConfig {
 
     @Bean
