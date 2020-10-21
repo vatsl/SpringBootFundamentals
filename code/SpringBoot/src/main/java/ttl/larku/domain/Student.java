@@ -30,9 +30,9 @@ public class Student {
 
     private static int nextId = 0;
 
-    public Student() {
-        this("Unknown");
-    }
+//    public Student() {
+//        this("Unknown");
+//    }
 
     public Student(String name) {
         this(name, null, Status.FULL_TIME, new ArrayList<ScheduledClass>());
